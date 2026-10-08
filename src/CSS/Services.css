@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cormorant Garamond', serif;
+
+
+  }
+  .services-container {
+    background-color: #29332A;
+    min-height: 100vh;
+  }
+
+  /* Фоновые волнистые линии */
+  .wave-bg {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 0;
+    animation: slideIn 0.8s ease-out 1s both;
+  }
+  
+  .wave-left {
+    left: 0;
+  }
+  
+  .wave-right {
+    right: 0;
+  }
+  
+  .wave-bg svg {
+    height: 100%;
+  }
+  
+  .services-content {
+    max-width: 600px;
+
+margin-left: 400px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .services-title {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 130px;
+    margin-left: -120px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    animation: slideInLeft 0.8s ease-out 1s both;
+    
+  }
+  
+  /* Поисковая строка */
+  .search-container {
+    margin-bottom: 30px;
+    
+    margin-right: 150px;
+    animation: slideInLeft 0.8s ease-out 1s both;
+   
+ 
+  }
+  
+  .search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .search-icon {
+  
+  padding-right: 20px;
+    z-index: 1;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 15px 15px 15px 20px;
+    border: 0px;
+    border-radius: 30px;
+    font-size: 20px;
+    background: rgba(217, 217, 217, 0.3);
+  
+   
+  }
+
+  
+  /* Блок фильтров */
+  .filters-container {
+    margin-left: -40px;
+    margin-right: 60px;
+    background: rgba(133, 188, 118, 0.14);
+    border-radius: 50px;
+    border: 1px solid rgb(255, 230, 119);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    animation: slideInLeft 0.8s ease-out 1s both;
+  }
+  
+  .filters-header {
+    margin-bottom: 2rem;
+  }
+  
+  .filters-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .filters-subtitle {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+  
+  .filter-group {
+    margin-bottom: 20px;
+  }
+  
+  .filter-label {
+    display: block;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  
+  .filter-select {
+    width: 100%;
+    padding: 10px ;
+    
+    border-radius: 30px;
+    background: rgba(135, 154, 128, 0.7);
+    font-size: 15px;
+    color: #ebeff5;
+    cursor: pointer;
+    border: 0px;
+  }
+  .filter-select option {
+    background-color: #2e352d; /* тёмный фон */
+    color: #ffffff;            /* белый текст */
+}
+
+  .filter-select:focus {
+    outline: none;
+    border-color: #a0c48b;
+  }
+  
+  /* Слайдер цены */
+  .price-slider-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .price-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: #e2e8f0;
+    outline: none;
+
+  }
+  
+  .price-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: #cdbd6c; /* Желтая дорожка */
+    /* Полупрозрачная */
+    outline: none;
+    -webkit-appearance: none;
+  }
+  
+  /* Ползунок */
+  .price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #d9c563; /* Желтый ползунок */
+    cursor: pointer;
+    border: 2px solid white;
+   
+  }
+  
+  .price-value {
+    font-weight: 600;
+    color: #ffffff;
+    min-width: 60px;
+  }
+  
+  /* Поле длительности */
+  .duration-input {
+    width: 100%;
+    padding: 10px ;
+    
+    border-radius: 30px;
+    background: rgba(135, 154, 128, 0.7);
+    font-size: 15px;
+    color: #ebeff5;
+    cursor: pointer;
+    border: 0px;
+  }
+  
+ 
+  /* Кнопки фильтров */
+  .filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .apply-button, .reset-button {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .apply-button {
+    background: linear-gradient(135deg, #e5c77c 10%, #8a6e35 80%);
+    color: white;
+  }
+  
+  .apply-button:hover {
+    transform: translateY(-2px);
+    
+  }
+  
+  .reset-button {
+    background: rgba(255, 197, 50, 0.26); 
+    color: #ffffff;
+    border: 0px ;
+  }
+  
+  .reset-button:hover {
+    transform: translateY(-2px);
+    
+  }
+  
+ /* Секция с карточками услуг */
+.services-cards-section {
+    padding: 40px 30px;
+    background: #29332A;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .services-cards-container {
+
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  /* Карточка услуги */
+  .service-card {
+    background: #15211B;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #ffe46d;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    
+  }
+  
+  .service-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover .service-image {
+    transform: scale(1.05);
+  }
+  
+  .service-content {
+    padding: 1.5rem;
+  }
+  
+  .service-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .service-description {
+    color: #ffffff;
+    line-height: 1.5;
+    margin-bottom: 13px;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .service-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0.5rem 0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .service-price {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
+  .service-duration {
+    color: #ffffff;
+    font-size: 19px;
+  }
+  
+  .book-button {
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #e5c77c 10%, #8a6e35 80%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .book-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .footer-container{
+    margin-bottom: -30px;
+  }
+  
+.footer-container2 {
+  background: #5E806028 ;
+  margin-bottom: -30px;
+  border-radius: 30px 30px 0 0;
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  border: 0.2px solid #e2e46f9b;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+}
+.form-title2 {
+  font-size: 35px;
+  color: #FFFFFF;
+  font-weight: 600;
+  text-align: left;
+}

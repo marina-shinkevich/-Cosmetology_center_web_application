@@ -1,0 +1,1133 @@
+/* ===== СТРАНИЦА МАСТЕРА ===== */
+
+.md-page {
+  background: #121D18;
+  color: #fff;
+  min-height: 100vh;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ===== LAYOUT ===== */
+
+.md-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
+}
+
+/* ===== SIDEBAR ===== */
+
+.md-sidebar {
+  background: rgba(18, 29, 24, 0.95);
+  border-right: 1px solid rgba(218, 235, 142, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.md-sidebar-header {
+  padding: 24px 20px 16px;
+  border-bottom: 1px solid rgba(218, 235, 142, 0.1);
+}
+
+.md-page-title {
+  font-size: 22px;
+  font-weight: 400;
+  color: #f1da8d;
+  margin-bottom: 4px;
+}
+
+.md-page-subtitle {
+  font-size: 14px;
+  color: #7A8C84;
+}
+
+/* ===== ПОИСК ===== */
+
+.md-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 16px 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #2A3D32;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.md-search {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'Cormorant Garamond', serif;
+  width: 100%;
+}
+.md-search::placeholder { color: #4a6055; }
+
+.md-client-count {
+  font-size: 11px;
+  color: #4a6055;
+  padding: 0 16px 6px;
+}
+
+/* ===== СПИСОК КЛИЕНТОВ ===== */
+
+.md-clients {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  padding: 4px 0;
+}
+
+.md-client-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.md-client-item:hover { background: rgba(94, 128, 96, 0.15); }
+.md-client-item--active { background: rgba(94, 128, 96, 0.25); border-left: 3px solid #EAC055; }
+
+.md-client-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2a6e4a, #1e5238);
+  border: 1px solid rgba(234, 192, 85, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #EAC055;
+  flex-shrink: 0;
+}
+
+.md-client-avatar--lg {
+  width: 52px;
+  height: 52px;
+  font-size: 18px;
+}
+
+.md-client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.md-client-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.md-client-phone {
+  font-size: 12px;
+  color: #7A8C84;
+}
+
+.md-client-visit {
+  font-size: 11px;
+  color: #4a6055;
+}
+
+.md-client-badge {
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 2px 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.md-badge--new    { background: rgba(234, 192, 85, 0.15); color: #EAC055; border: 1px solid rgba(234, 192, 85, 0.3); }
+.md-badge--active { background: rgba(92, 184, 92, 0.15);  color: #7dcc7d; border: 1px solid rgba(92, 184, 92, 0.3); }
+
+.md-client-badge--lg { font-size: 12px; padding: 4px 12px; }
+
+.md-empty { padding: 20px 16px; color: #4a6055; font-style: italic; font-size: 13px; }
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+
+.md-content {
+  overflow-y: auto;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ===== ШАПКА КЛИЕНТА ===== */
+
+.md-client-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(218, 235, 142, 0.1);
+  margin-bottom: 20px;
+}
+
+.md-client-fullname {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.md-client-contacts {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #7A8C84;
+}
+
+/* ===== ВКЛАДКИ ===== */
+
+.md-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid rgba(218, 235, 142, 0.15);
+  margin-bottom: 24px;
+}
+
+.md-tab {
+  padding: 10px 18px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #7A8C84;
+  font-size: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: -1px;
+}
+.md-tab:hover { color: #c0d0c8; }
+.md-tab--active { color: #EAC055; border-bottom-color: #EAC055; }
+
+.md-tab-count {
+  background: rgba(234, 192, 85, 0.2);
+  color: #EAC055;
+  border-radius: 10px;
+  padding: 1px 6px;
+  font-size: 11px;
+}
+
+/* ===== СЕКЦИИ ===== */
+
+.md-card-section {
+  margin-bottom: 8px;
+}
+
+.md-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.md-section-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #f1da8d;
+  margin-bottom: 16px;
+}
+
+.md-section-header .md-section-title { margin-bottom: 0; }
+
+.md-subsection-title {
+  font-size: 14px;
+  color: #7A8C84;
+  margin: 16px 0 8px;
+  font-weight: 400;
+}
+.md-subsection-title--muted { color: #4a6055; }
+
+/* ===== МЕДКАРТА ===== */
+
+.md-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  margin-bottom: 16px;
+}
+
+.md-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.md-info-label {
+  font-size: 11px;
+  color: #7A8C84;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.md-info-value {
+  font-size: 15px;
+  color: #c0d0c8;
+}
+
+.md-value--warning {
+  color: #e8a040;
+  background: rgba(232, 160, 64, 0.1);
+  border-radius: 6px;
+  padding: 2px 8px;
+  display: inline-block;
+}
+
+.md-value--note {
+  color: #a8bdb5;
+  font-style: italic;
+}
+
+.md-medical-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(94, 128, 96, 0.1);
+  border: 1px solid rgba(218, 235, 142, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+
+.md-medical-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.md-updated {
+  font-size: 11px;
+  color: #4a6055;
+}
+
+/* ===== ПРОЦЕДУРЫ ===== */
+
+.md-procedures-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.md-procedure-item {
+  background: rgba(94, 128, 96, 0.1);
+  border: 1px solid rgba(218, 235, 142, 0.1);
+  border-radius: 12px;
+  padding: 14px 16px;
+  transition: border-color 0.2s;
+}
+.md-procedure-item:hover { border-color: rgba(218, 235, 142, 0.25); }
+.md-procedure--scheduled { border-left: 3px solid #EAC055; }
+.md-procedure--cancelled { opacity: 0.6; }
+
+.md-procedure-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.md-procedure-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.md-status-badge {
+  font-size: 11px;
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+.md-status--completed  { background: rgba(92, 184, 92, 0.15);  color: #7dcc7d; }
+.md-status--cancelled  { background: rgba(217, 83, 79, 0.15);  color: #e07070; }
+.md-status--scheduled  { background: rgba(234, 192, 85, 0.15); color: #EAC055; }
+.md-status--active     { background: rgba(92, 184, 92, 0.15);  color: #7dcc7d; }
+
+.md-procedure-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #7A8C84;
+  margin-bottom: 8px;
+}
+
+.md-procedure-drugs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.md-drug-tag {
+  background: rgba(160, 136, 76, 0.15);
+  border: 1px solid rgba(160, 136, 76, 0.3);
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 12px;
+  color: #c8a84b;
+}
+
+.md-procedure-notes {
+  font-size: 13px;
+  color: #8a9e96;
+  font-style: italic;
+}
+
+/* ===== РЕКОМЕНДАЦИИ ===== */
+
+.md-add-btn {
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid rgba(234, 192, 85, 0.4);
+  border-radius: 16px;
+  color: #EAC055;
+  font-size: 13px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.md-add-btn:hover { background: rgba(234, 192, 85, 0.1); }
+
+.md-rec-form {
+  background: rgba(94, 128, 96, 0.12);
+  border: 1px solid rgba(218, 235, 142, 0.15);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.md-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.md-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.md-form-label {
+  font-size: 11px;
+  color: #7A8C84;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.md-form-select,
+.md-form-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #2A3D32;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.md-form-select:focus,
+.md-form-input:focus { border-color: #EAC055; }
+.md-form-select option { background: #1e2d24; }
+
+.md-form-textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #2A3D32;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  padding: 10px 12px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s;
+  line-height: 1.5;
+}
+.md-form-textarea:focus { border-color: #EAC055; }
+.md-form-textarea::placeholder { color: #4a6055; }
+
+.md-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.md-btn {
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+.md-btn--primary { background: linear-gradient(135deg, #a0884c, #8a6e35); color: #fff; }
+.md-btn--primary:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(160,136,76,0.3); }
+.md-btn--primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.md-btn--secondary { background: transparent; border: 1px solid rgba(218,235,142,0.25); color: #c0d0c8; }
+.md-btn--secondary:hover { border-color: #EAC055; color: #EAC055; }
+
+.md-rec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.md-rec-item {
+  background: rgba(94, 128, 96, 0.1);
+  border: 1px solid rgba(218, 235, 142, 0.1);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.md-rec--high   { border-left: 3px solid #e07070; }
+.md-rec--normal { border-left: 3px solid #EAC055; }
+.md-rec--low    { border-left: 3px solid #7A8C84; }
+
+.md-rec-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.md-rec-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.md-tag {
+  font-size: 11px;
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+.md-tag--category { background: rgba(94, 128, 96, 0.3); color: #a8bdb5; }
+.md-tag--priority.md-tag--high   { background: rgba(220, 80, 80, 0.15);  color: #e07070; }
+.md-tag--priority.md-tag--normal { background: rgba(234, 192, 85, 0.15); color: #EAC055; }
+.md-tag--priority.md-tag--low    { background: rgba(122, 140, 132, 0.2); color: #7A8C84; }
+
+.md-rec-actions { display: flex; gap: 6px; }
+
+.md-icon-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  color: #7A8C84;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.md-icon-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.md-icon-btn--danger:hover { background: rgba(220, 80, 80, 0.2); color: #e07070; }
+
+.md-rec-text {
+  font-size: 14px;
+  color: #c0d0c8;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.md-rec-date {
+  font-size: 11px;
+  color: #4a6055;
+}
+
+/* ===== ПРЕПАРАТЫ ===== */
+
+.md-drug-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1a2b22;
+  border: 1px solid rgba(218, 235, 142, 0.2);
+  border-radius: 8px;
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 2px;
+}
+
+.md-drug-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: #c0d0c8;
+  font-size: 13px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+.md-drug-option:hover { background: rgba(94, 128, 96, 0.2); }
+.md-drug-option--empty { color: #4a6055; font-style: italic; cursor: default; }
+
+.md-drug-category {
+  font-size: 11px;
+  color: #4a6055;
+}
+
+.md-selected-drug {
+  font-size: 13px;
+  color: #7dcc7d;
+  padding: 4px 0;
+}
+
+.md-drugs-table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(218, 235, 142, 0.1);
+}
+
+.md-drugs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.md-drugs-table thead tr { background: rgba(30, 45, 36, 0.8); }
+.md-drugs-table th { padding: 8px 12px; text-align: left; color: #7A8C84; font-weight: 400; font-size: 11px; text-transform: uppercase; }
+.md-drugs-table td { padding: 9px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #c0d0c8; }
+.md-drugs-table tbody tr:last-child td { border-bottom: none; }
+.md-drugs-table tbody tr:hover td { background: rgba(94, 128, 96, 0.08); }
+.md-drugs-table--inactive { opacity: 0.7; }
+
+.md-drug-name { font-weight: 500; color: #fff; }
+
+.md-cancel-drug-btn {
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid rgba(220, 80, 80, 0.3);
+  border-radius: 10px;
+  color: #e07070;
+  font-size: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.md-cancel-drug-btn:hover { background: rgba(220, 80, 80, 0.1); }
+
+/* ===== ПРОЧЕЕ ===== */
+
+.md-empty-text {
+  color: #4a6055;
+  font-style: italic;
+  font-size: 14px;
+  padding: 12px 0;
+}
+
+.md-no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #4a6055;
+  font-size: 16px;
+}
+
+/* ===== АДАПТИВ ===== */
+
+@media (max-width: 900px) {
+  .md-layout { grid-template-columns: 1fr; }
+  .md-sidebar { max-height: 300px; }
+  .md-content { padding: 16px; }
+  .md-info-grid, .md-form-row { grid-template-columns: 1fr; }
+}
+
+/* ===== ПЕРЕКЛЮЧАТЕЛЬ РЕЖИМОВ ===== */
+
+.md-mode-switch {
+  display: flex;
+  gap: 4px;
+  margin-top: 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.md-mode-btn {
+  flex: 1;
+  padding: 7px 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #7A8C84;
+  font-size: 13px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.md-mode-btn:hover { color: #c0d0c8; }
+.md-mode-btn--active {
+  background: rgba(94, 128, 96, 0.35);
+  color: #EAC055;
+}
+
+/* ===== РАСПИСАНИЕ ===== */
+
+.md-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 24px;
+}
+
+.md-schedule-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.md-week-nav-btn {
+  width: 34px;
+  height: 34px;
+  background: rgba(94, 128, 96, 0.2);
+  border: 1px solid rgba(218, 235, 142, 0.2);
+  border-radius: 8px;
+  color: #EAC055;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.md-week-nav-btn:hover { background: rgba(94, 128, 96, 0.4); border-color: #EAC055; }
+
+.md-week-label {
+  font-size: 16px;
+  color: #fff;
+  min-width: 200px;
+}
+
+.md-today-btn {
+  padding: 5px 14px;
+  background: transparent;
+  border: 1px solid rgba(234, 192, 85, 0.35);
+  border-radius: 14px;
+  color: #EAC055;
+  font-size: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.md-today-btn:hover { background: rgba(234, 192, 85, 0.1); }
+
+/* Сетка дней */
+.md-schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.md-schedule-day {
+  background: rgba(94, 128, 96, 0.1);
+  border: 1px solid rgba(218, 235, 142, 0.1);
+  border-radius: 12px;
+  padding: 12px 10px;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.md-schedule-day--today {
+  border-color: rgba(234, 192, 85, 0.5);
+  background: rgba(94, 128, 96, 0.18);
+}
+
+.md-schedule-day-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.md-schedule-day-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.md-schedule-day-date {
+  font-size: 11px;
+  color: #7A8C84;
+}
+
+.md-schedule-day-date--today {
+  color: #EAC055;
+  font-weight: 500;
+}
+
+.md-schedule-day-count {
+  display: inline-block;
+  background: rgba(234, 192, 85, 0.2);
+  color: #EAC055;
+  border-radius: 8px;
+  padding: 1px 6px;
+  font-size: 10px;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.md-schedule-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.md-schedule-empty {
+  font-size: 11px;
+  color: #3a5040;
+  font-style: italic;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.md-schedule-entry {
+  display: flex;
+  gap: 8px;
+  background: rgba(18, 29, 24, 0.6);
+  border: 1px solid rgba(218, 235, 142, 0.12);
+  border-radius: 8px;
+  padding: 8px;
+  transition: border-color 0.2s;
+}
+.md-schedule-entry:hover { border-color: rgba(234, 192, 85, 0.35); }
+
+.md-entry-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: #EAC055;
+  white-space: nowrap;
+  min-width: 36px;
+}
+
+.md-entry-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.md-entry-client {
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.md-entry-service {
+  font-size: 11px;
+  color: #a8bdb5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.md-entry-phone {
+  font-size: 10px;
+  color: #4a6055;
+}
+
+@media (max-width: 900px) {
+  .md-schedule-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .md-schedule-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО ЗАПИСИ ===== */
+
+.md-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: mdFadeIn 0.2s ease-out;
+}
+
+@keyframes mdFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.md-entry-modal {
+  background: #1a2b22;
+  border: 1px solid rgba(234, 192, 85, 0.3);
+  border-radius: 20px;
+  padding: 28px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: mdSlideUp 0.25s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@keyframes mdSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.md-modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.07);
+  border: none;
+  border-radius: 50%;
+  color: #7A8C84;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.md-modal-close-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* Шапка модалки */
+.md-entry-modal-header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.md-entry-modal-time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.md-entry-modal-date {
+  font-size: 13px;
+  color: #7A8C84;
+}
+
+.md-entry-modal-clock {
+  font-size: 22px;
+  font-weight: 600;
+  color: #EAC055;
+}
+
+.md-entry-modal-service {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* Секции модалки */
+.md-entry-modal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.md-entry-modal-section-title {
+  font-size: 12px;
+  color: #7A8C84;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 400;
+}
+
+/* Клиент */
+.md-entry-modal-client {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.md-client-avatar--md {
+  width: 44px;
+  height: 44px;
+  font-size: 15px;
+}
+
+.md-entry-modal-client-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.md-entry-modal-client-phone {
+  font-size: 13px;
+  color: #a8bdb5;
+}
+
+.md-entry-modal-client-email {
+  font-size: 12px;
+  color: #7A8C84;
+}
+
+/* Медкарта */
+.md-entry-modal-medcard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(94, 128, 96, 0.1);
+  border: 1px solid rgba(218, 235, 142, 0.1);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.md-entry-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.md-entry-modal-field--warning {
+  background: rgba(232, 160, 64, 0.08);
+  border: 1px solid rgba(232, 160, 64, 0.25);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.md-entry-modal-field-label {
+  font-size: 11px;
+  color: #7A8C84;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.md-entry-modal-field--warning .md-entry-modal-field-label {
+  color: #e8a040;
+}
+
+.md-entry-modal-field-value {
+  font-size: 14px;
+  color: #c0d0c8;
+  line-height: 1.4;
+}
+
+.md-entry-modal-field--warning .md-entry-modal-field-value {
+  color: #e8c080;
+  font-weight: 500;
+}
+
+/* Рекомендации */
+.md-entry-modal-recs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.md-entry-modal-rec {
+  font-size: 13px;
+  color: #c0d0c8;
+  line-height: 1.5;
+  padding: 8px 12px;
+  background: rgba(94, 128, 96, 0.1);
+  border-left: 2px solid rgba(234, 192, 85, 0.4);
+  border-radius: 0 6px 6px 0;
+}
+
+/* История */
+.md-entry-modal-history {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.md-entry-modal-history-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 8px;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.md-entry-modal-history-item:last-child { border-bottom: none; }
+
+.md-entry-modal-history-date {
+  font-size: 12px;
+  color: #7A8C84;
+  white-space: nowrap;
+}
+
+.md-entry-modal-history-name {
+  font-size: 13px;
+  color: #c0d0c8;
+}
+
+.md-entry-modal-history-note {
+  grid-column: 2;
+  font-size: 11px;
+  color: #4a6055;
+  font-style: italic;
+}
+
+/* Кликабельная карточка расписания */
+.md-schedule-entry--clickable {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: rgba(18, 29, 24, 0.6);
+  border: 1px solid rgba(218, 235, 142, 0.12);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  transition: all 0.2s;
+  font-family: 'Cormorant Garamond', serif;
+}
+.md-schedule-entry--clickable:hover {
+  border-color: rgba(234, 192, 85, 0.5);
+  background: rgba(94, 128, 96, 0.15);
+  transform: translateY(-1px);
+}
+
+.md-entry-hint {
+  font-size: 10px;
+  color: #3a5040;
+  margin-top: 2px;
+  transition: color 0.2s;
+}
+.md-schedule-entry--clickable:hover .md-entry-hint {
+  color: #EAC055;
+}

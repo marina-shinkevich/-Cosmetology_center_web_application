@@ -1,0 +1,141 @@
+ /* Модальное окно */
+.modal-overlay {
+   
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+  }
+  
+  .booking-modal {
+    background-color: #F2F6CB;
+  border:2px solid rgb(253, 179, 41);
+    border-radius: 30px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalAppear 0.3s ease-out;
+  }
+  
+  @keyframes modalAppear {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fbba39;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-close:hover {
+
+    color: #2d3748;
+  }
+  
+  .modal-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+
+ /* Форма записи */
+ .booking-form {
+    background-color: #F2F6CB;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-group44 {
+    background-color: #F2F6CB;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-label44 {
+    font-weight: 600;
+    color: #434440;
+    font-size: 18px;
+  }
+  
+  .form-value44 {
+    padding: 14px 20px;
+    background: rgba(170, 171, 168, 0.4);
+    border-radius: 15px;
+    color: #2d3748;
+    font-weight: 500;
+  }
+  
+  .form-input,
+  .form-select {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: #434440;
+    font-size: 18px;
+    background: rgba(170, 171, 168, 0.4);
+    border-radius: 15px;
+    border: 0px;
+    
+  }
+  
+  .form-input:focus,
+  .form-select:focus {
+    outline: none;
+    border-color: #f0b342;
+    color: #29332A;
+    
+  }
+  
+  .form-input[type="date"] {
+    cursor: pointer;
+    color: #29332A;
+    font-size: 18px;
+    border-color: #f0b342;
+  }
+  
+  .submit-booking-button {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #e5c77c 10%, #8a6e35 80%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .submit-booking-button:hover {
+    transform: translateY(-2px);
+    
+  }
+  
+  

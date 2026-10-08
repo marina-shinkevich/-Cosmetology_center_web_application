@@ -1,0 +1,152 @@
+/* Футер */
+.main-footer {
+    padding: 0 30px 30px 30px;
+    margin-top: 0px;
+    margin-bottom: -70px;
+  }
+  
+  .footer-container {
+    background: #5E806028 ;
+  
+    border-radius: 30px 30px 0 0;
+    padding: 50px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    border: 0.2px solid #e2e46f9b;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Левая часть */
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .footer-logo {
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: 1px;
+  }
+  
+  .footer-copyright {
+    font-size: 12px;
+    width: 200px;
+    margin-left: 75px;
+    color: #7A8C84;
+    line-height: 1.4;
+  }
+  
+  /* Центральная часть - форма */
+  .footer-center {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .form-title {
+    font-size: 30px;
+    color: #FFFFFF;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-input {
+    padding: 12px 0; 
+    border: none; 
+    border-bottom: 0.3px solid #ffffff;
+    border-radius: 0; 
+    background: transparent; 
+    color: #FFFFFF;
+    font-size: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    transition: all 0.3s ease;
+    outline: none; 
+  }
+  
+  
+  
+  
+  
+  
+  .submit-button {
+    padding: 12px 24px;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: rgba(217, 217, 217, 0.08); 
+    border: none;
+    border-radius: 40px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(224, 212, 172, 0.253);
+  }
+  
+  
+  /* Правая часть - контакты */
+  .footer-right {
+    display: flex;
+    margin-right: 50px;
+    justify-content: flex-end;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    margin-top:30px ;
+    gap: 12px;
+  }
+  
+  .contact-item {
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 1.4;
+  }
+  
+  .contact-item strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .social-icon {
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.4));
+  }
+  
+  .instagram-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .telegram-icon:hover {
+    transform: scale(1.1) translateY(-2px);
+  }
+  
+  /* Контейнер для соцсетей в футере */
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+  }
+  
+  

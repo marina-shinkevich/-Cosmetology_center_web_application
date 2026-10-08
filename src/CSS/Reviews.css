@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    font-family: 'Cormorant Garamond', serif;
+}
+.reviews-container {
+    background-color: #121D18;
+    display: flex;
+    min-height: 100vh;
+    
+}
+
+  .reviews-slider {
+    flex: 1;
+    background: rgba(159, 185, 150, 0.21);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    animation: slideInLeft 0.8s ease-out;
+  }
+  
+  .slider-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #f3f792;
+    padding: 1rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .review-card {
+    background: transparent;
+    border-radius: 20px;
+    padding: 2rem;
+    
+    text-align: center;
+    max-width: 400px;
+    flex: 1;
+  }
+  
+  .avatar1-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .avatar1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eff296;
+  }
+  
+  .review-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    position: relative;
+    padding: 0 1rem;
+  }
+  
+  .quote {
+    font-size: 3rem;
+    color: #ffffff;
+    font-family: serif;
+    position: absolute;
+    line-height: 1;
+  }
+  
+  .top-quote {
+    top: -20px;
+    left: -15px;
+  }
+  
+  .bottom-quote {
+    bottom: -30px;
+    right: -15px;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1rem;
+  }
+  
+  .slider-dots {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #4e4e4b;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #f3efbd;
+  }
+  
+  /* Правая часть - форма */
+  .reviews-form {
+    flex: 1;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    animation: slideInRight 0.8s ease-out;
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    max-width: 120px;
+    margin-bottom: 10px;
+    height: auto;
+  }
+  
+  .form-content {
+    max-width: 500px;
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-section {
+    flex: 1;
+    width: 500px;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .review-textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    background-color: rgba(217, 217, 217, 0.64);
+    height: 250px;
+    color: #121D18;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .review-textarea:focus {
+    outline: none;
+   
+  }
+  
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: auto;
+  }
+  
+
+  
+  .submit-button1 {
+    background: linear-gradient(135deg, #dabc70 0%, #604b20 100%);
+    color: white;
+    margin-left: 140px;
+    width: 250px;
+    padding: 17px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  }
+  
+  .submit-button1:hover {
+    transform: translateY(-2px);
+
+  }
+  
+  .home-button {
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    padding: 5px;
+    margin-left: 50px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  .homebt{
+    text-decoration: none;
+    color:aliceblue
+  }
+  
+  
+  .home-button:hover {
+
+    transform: translateY(-2px);
+  }
+  

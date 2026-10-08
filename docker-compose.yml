@@ -1,0 +1,68 @@
+services:
+  # ─── MS SQL Server 
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: skincode_db
+    environment:
+      SA_PASSWORD: "SkinCode2025!"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
+      MSSQL_MEMORY_LIMIT_MB: 2048
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+      - ./docker-init-db.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker-entrypoint-db.sh:/docker-entrypoint-db.sh
+    entrypoint: ["/bin/bash", "/docker-entrypoint-db.sh"]
+    deploy:
+      resources:
+        limits:
+          memory: 2g
+    healthcheck:
+      test: ["CMD", "/opt/mssql-tools18/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", "SkinCode2025!", "-C", "-Q", "SELECT 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 15
+      start_period: 60s
+
+  # ─── Node.js Backend 
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: skincode_backend
+    environment:
+      DB_SERVER: db
+      DB_NAME: CosmetologyCenterDB
+      DB_USER: skincode_user
+      DB_PASSWORD: SkinCode2025!
+      PORT: 3001
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL}
+      OPENAI_MODEL: ${OPENAI_MODEL}
+    ports:
+      - "3001:3001"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: on-failure
+
+  # ─── NGINX + React Frontend ─────────────────────────────────────────────────
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: skincode_frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./server/localhost+2.pem:/etc/nginx/certs/localhost+2.pem:ro
+      - ./server/localhost+2-key.pem:/etc/nginx/certs/localhost+2-key.pem:ro
+    depends_on:
+      - backend
+    restart: on-failure
+
+volumes:
+  sqldata:

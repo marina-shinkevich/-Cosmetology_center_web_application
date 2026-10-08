@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+  
+/* Навигация */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(18, 29, 24, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+ 
+  
+  .nav-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 80px;
+    padding: 10px;
+    margin-top: 10px;
+    flex: 1;
+  }
+  
+  .nav-center {
+    flex: 1;
+    display: flex;
+    flex: 0 0 auto;
+  
+  }
+  .nav-left {
+    flex: 1;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 200px;
+  }
+  
+  .nav-logo {
+    height: 70px;
+    width: auto;
+    margin-left: 170px;
+    animation: fadeIn 0.8s ease-out 0.3s both;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    animation: fadeIn 0.6s ease-out 0.5s both;
+  }
+  
+  .nav-link:hover {
+    color: #a0884c;
+  }
+  .account-icon {
+    display: flex;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.6s ease-out 0.5s both;
+   
+  }
+  
+  .account-icon-img {
+    width: 34px;
+    height: 34px;
+  }
+  

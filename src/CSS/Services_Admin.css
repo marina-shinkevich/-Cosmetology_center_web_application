@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+*{
+    font-family: 'Cormorant Garamond', serif;
+}
+/* Общий фон + шрифт */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f3e5;
+  
+  color: #0F2D25;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ========== Левое боковое меню ========== */
+.admin-sidebar {
+  width: 220px; /* Уменьшено */
+  background: #0F2D25;
+  color: #f4d194;
+  padding: 30px 20px; /* Уменьшено */
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Уменьшено */
+  box-shadow: 4px 0 18px rgba(0, 0, 0, 0.25);
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.sidebar-title {
+  font-size: 22px; /* Уменьшено */
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #EEE6D8;
+  border-bottom: 1px solid #ebcb93;
+  padding-bottom: 8px; /* Уменьшено */
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Уменьшено */
+}
+
+.menu-item {
+  padding: 10px 14px; /* Уменьшено */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px; /* Уменьшено */
+  transition: 0.3s;
+  color: #EEE6D8;
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.menu-item:nth-child(1) { animation-delay: 0.1s; }
+.menu-item:nth-child(2) { animation-delay: 0.2s; }
+.menu-item:nth-child(3) { animation-delay: 0.3s; }
+.menu-item:nth-child(4) { animation-delay: 0.4s; }
+.menu-item:nth-child(5) { animation-delay: 0.5s; }
+.menu-item:nth-child(6) { animation-delay: 0.6s; }
+.menu-item:nth-child(7) { animation-delay: 0.7s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-item:hover {
+
+  transform: translateX(5px);
+}
+
+.menu-item.active {
+  background: rgba(196, 164, 109, 0.35);
+ 
+}
+
+/* ========== Основной контент ========== */
+.admin-content {
+  flex: 1;
+  padding: 30px; /* Уменьшено */
+  animation: fadeIn 0.8s ease-out 0.3s both;
+  overflow-x: hidden; /* Запрещаем горизонтальную прокрутку */
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px; /* Уменьшено */
+}
+
+.content-header h1 {
+  font-size: 26px; /* Уменьшено */
+  font-weight: 600;
+  color: #0F2D25;
+  letter-spacing: 0.5px; /* Уменьшено */
+}
+
+/* Золотая кнопка */
+.save-all-btn {
+  padding: 12px 20px; /* Уменьшено */
+  background: #ebcd9b;
+  color: #0F2D25;
+  border: none;
+  border-radius: 20px; /* Уменьшено */
+  cursor: pointer;
+  font-size: 14px; /* Уменьшено */
+  letter-spacing: 0.3px; /* Уменьшено */
+  font-weight: bold;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.save-all-btn:hover {
+  background: #b4935f;
+  transform: translateY(-2px);
+}
+
+/* ========== Таблица ========== */
+.services-table-container {
+  background: white;
+  padding: 15px; /* Уменьшено */
+  border-radius: 12px; /* Уменьшено */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Уменьшено */
+  border: 1px solid #f0d098;
+  animation: scaleIn 0.6s ease-out 0.5s both;
+  overflow-x: auto; /* Разрешаем прокрутку только если необходимо */
+  max-width: 100%;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px; /* Уменьшено */
+  min-width: 0; /* Позволяет таблице сжиматься */
+}
+
+.services-table th {
+  text-align: left;
+  padding: 10px 8px; /* Уменьшено */
+  color: #0F2D25;
+  font-weight: bold;
+  border-bottom: 2px solid #C4A46D;
+  letter-spacing: 0.3px; /* Уменьшено */
+  white-space: nowrap;
+}
+
+.services-table td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #DDD2BA;
+  color: #1A1A1A;
+  transition: 0.3s;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.services-table td.actions-cell {
+  overflow: visible;
+  max-width: none;
+  white-space: nowrap;
+  width: 1%;
+}
+td .deystvuser{
+  padding-left: 50px;
+}
+
+.services-table tr {
+  transition: 0.3s;
+}
+
+.services-table tr:hover {
+  
+  transform: translateX(3px); /* Уменьшено */
+}
+
+/* Анимация появления строк */
+.services-table tr {
+  animation: fadeInRow 0.5s ease-out both;
+}
+
+.services-table tr:nth-child(1) { animation-delay: 0.6s; }
+.services-table tr:nth-child(2) { animation-delay: 0.7s; }
+.services-table tr:nth-child(3) { animation-delay: 0.8s; }
+.services-table tr:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes fadeInRow {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ======== Поля редактирования ======== */
+.services-table .edit-input {
+  width: 100px;
+  padding: 6px 0px; /* Уменьшено */
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  transition: 0.2s;
+  background: white;
+  font-size: 13px; /* Уменьшено */
+  margin-left: 0px; /* Убрано отрицательное смещение */
+}
+
+/* Хэш */
+.password-hash {
+  font-size: 12px; /* Уменьшено */
+  opacity: 0.7;
+
+}
+
+/* Стили для поля ID */
+.service-id {
+  font-weight: 600;
+  color: #0F2D25;
+  background: #f8f5ec;
+  padding: 3px 6px; /* Уменьшено */
+  border-radius: 3px;
+  border: 1px solid #DDD2BA;
+
+  font-size: 12px; /* Уменьшено */
+}
+
+.services-table .id-input {
+  width: 50px; /* Уменьшено */
+  text-align: center;
+  font-weight: 600;
+  background: #f8f5ec;
+  color: #0F2D25;
+  font-size: 12px; /* Уменьшено */
+}
+
+.services-table .id-input:disabled {
+  background: #f0f0f0;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* ========== Кнопки действий ========== */
+.services-table .actions-cell {
+  display: flex;
+  gap: 4px;
+  padding-top: 4px;
+  white-space: nowrap;
+  overflow: visible;
+  min-width: 160px;
+}
+
+/* Стандартные кнопки */
+.services-table .default-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.services-table .default-actions button {
+  border: 1px solid #C4A46D;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #EEE6D8;
+  color: #0F2D25;
+  white-space: nowrap;
+}
+
+.default-actions button:hover {
+ 
+  transform: translateY(-1px); /* Уменьшено */
+}
+
+.services-table .delete-btn {
+  background: #8C3A3A !important;
+  color: white !important;
+  border: none !important;
+}
+
+.delete-btn:hover {
+  background: #722f2f !important;
+}
+
+/* Кнопки редактирования */
+.services-table .edit-actions {
+  display: flex;
+  gap: 4px; /* Уменьшено */
+}
+
+.services-table .edit-actions button {
+  padding: 6px 0px; /* Уменьшено */
+  border: none;
+  border-radius: 4px; /* Уменьшено */
+  cursor: pointer;
+  font-size: 12px; /* Уменьшено */
+  color: #FFF;
+  transition: 0.3s;
+  margin-top: 10px;
+  min-width: 30px; /* Уменьшено */
+}
+
+.services-table .save-btn {
+  background: #0F2D25;
+}
+
+.save-btn:hover {
+  background: #194137;
+  transform: translateY(-1px); /* Уменьшено */
+}
+
+.services-table .cancel-btn {
+  background: #8C3A3A;
+}
+
+.cancel-btn:hover {
+  background: #722f2f;
+  transform: translateY(-1px); /* Уменьшено */
+}
+
+/* Простая анимация удаления */
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateX(-20px); }
+}
+
+.deleting {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+
+
+/* Панель добавления новой процедуры */
+.add-service-panel {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f0d098;
+  margin-bottom: 30px;
+  animation: scaleIn 0.6s ease-out 0.5s both;
+}
+
+.add-service-panel h2 {
+  color: #0F2D25;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: 2px solid #C4A46D;
+  padding-bottom: 10px;
+}
+
+.add-service-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row11 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group11 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group11 label {
+  color: #0F2D25;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-input11 {
+  padding: 12px 16px;
+  border: 1px solid #DDD2BA;
+  border-radius: 8px;
+  font-size: 14px;
+
+  transition: 0.3s;
+  background: white;
+}
+
+.form-input11:focus {
+  outline: none;
+  border-color: #C4A46D;
+  box-shadow: 0 0 0 3px rgba(196, 164, 109, 0.1);
+}
+
+.form-textarea11 {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.photo-upload11 {
+  display: flex;
+  gap: 10px;
+}
+
+.upload-btn11 {
+  padding: 12px 20px;
+  background: #EEE6D8;
+  border: 1px solid #C4A46D;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.upload-btn11:hover {
+  background: #e4d7c0;
+}
+
+.add-service-btn {
+  padding: 15px 30px;
+  background: #0F2D25;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+  align-self: flex-start;
+}
+
+.add-service-btn:hover {
+  background: #194137;
+  transform: translateY(-2px);
+}
+
+/* Заголовок таблицы существующих процедур */
+.services-table-container h2 {
+  color: #0F2D25;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+

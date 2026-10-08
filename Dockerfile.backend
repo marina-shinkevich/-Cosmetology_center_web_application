@@ -1,0 +1,12 @@
+FROM node:20-alpine
+WORKDIR /app
+
+# Копируем серверный package.json
+COPY server/package.json ./
+RUN npm install --omit=dev
+
+# Копируем исходники сервера
+COPY server/ .
+
+EXPOSE 3001
+CMD ["node", "server.js"]

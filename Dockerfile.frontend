@@ -1,0 +1,22 @@
+# Этап 1 — сборка React приложения
+FROM node:20-alpine AS build
+WORKDIR /app
+
+COPY package*.json ./
+# --ignore-scripts пропускает нативную компиляцию msnodesqlv8 (Windows-only)
+RUN npm install --ignore-scripts
+
+COPY public/ ./public/
+COPY src/ ./src/
+COPY tsconfig.json ./
+
+RUN npm run build
+
+# Этап 2 — NGINX 
+FROM nginx:alpine
+
+COPY --from=build /app/build /usr/share/nginx/html
+COPY nginx.docker.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

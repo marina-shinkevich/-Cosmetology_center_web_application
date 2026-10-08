@@ -1,0 +1,563 @@
+/* ===== СТРАНИЦА ПРОЦЕДУРЫ ===== */
+
+.pd-page {
+  background: #121D18;
+  color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Хлебные крошки */
+.pd-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 100px 60px 0;
+  font-size: 15px;
+  animation: slideInLeft 0.6s ease-out both;
+}
+
+.pd-breadcrumb-link {
+  color: #7A8C84;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.pd-breadcrumb-link:hover { color: #f0d67d; }
+
+.pd-breadcrumb-sep { color: #7A8C84; }
+
+.pd-breadcrumb-current { color: #f1da8d; font-weight: 500; }
+
+/* Кнопка назад */
+.pd-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 16px 60px 0;
+  background: transparent;
+  border: 1px solid rgba(234, 192, 85, 0.4);
+  border-radius: 20px;
+  color: #EAC055;
+  font-size: 15px;
+  font-family: 'Cormorant Garamond', serif;
+  padding: 8px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.pd-back-btn:hover {
+  background: rgba(234, 192, 85, 0.1);
+  border-color: #EAC055;
+}
+
+/* ===== HERO ===== */
+.pd-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 40px 60px 60px;
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+.pd-hero__image-wrap {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(234, 192, 85, 0.3);
+  max-height: 480px;
+}
+
+.pd-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.pd-hero__image-wrap:hover .pd-hero__image { transform: scale(1.03); }
+
+.pd-hero__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.pd-hero__title {
+  font-size: 52px;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.pd-hero__description {
+  font-size: 18px;
+  color: #a8bdb5;
+  line-height: 1.7;
+}
+
+.pd-hero__meta {
+  display: flex;
+  gap: 30px;
+}
+
+.pd-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(94, 128, 96, 0.2);
+  border: 1px solid rgba(234, 192, 85, 0.25);
+  border-radius: 14px;
+  padding: 14px 24px;
+  min-width: 130px;
+}
+
+.pd-meta-label {
+  font-size: 13px;
+  color: #7A8C84;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pd-meta-value {
+  font-size: 22px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.pd-meta-value--price { color: #EAC055; }
+
+.pd-book-btn {
+  padding: 14px 36px;
+  background: linear-gradient(135deg, #a0884c 0%, #8a6e35 100%);
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  align-self: flex-start;
+}
+.pd-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(160, 136, 76, 0.4);
+}
+
+/* ===== ДЕТАЛИ ===== */
+.pd-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 0 60px 60px;
+}
+
+.pd-details__block {
+  background: rgba(94, 128, 96, 0.15);
+  border: 1px solid rgba(218, 235, 142, 0.2);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.pd-section-title {
+  font-size: 30px;
+  font-weight: 400;
+  color: #f1da8d;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.pd-section-title--center { text-align: center; }
+
+.pd-details__text {
+  font-size: 17px;
+  color: #c0d0c8;
+  line-height: 1.7;
+}
+
+.pd-indications-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pd-indications-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 17px;
+  color: #c0d0c8;
+  line-height: 1.5;
+}
+
+.pd-check {
+  color: #7C9575;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ===== ПРЕПАРАТЫ ===== */
+.pd-drugs {
+  padding: 0 60px 80px;
+}
+
+.pd-drugs__hint {
+  text-align: center;
+  color: #7A8C84;
+  font-size: 16px;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pd-ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(160, 136, 76, 0.15);
+  border: 1px solid rgba(160, 136, 76, 0.4);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 13px;
+  color: #EAC055;
+}
+
+.pd-drugs__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.pd-drug-card {
+  background: rgba(94, 128, 96, 0.15);
+  border: 1px solid rgba(218, 235, 142, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s;
+  padding: 0;
+  width: 100%;
+}
+
+.pd-drug-card:hover {
+  border-color: rgba(234, 192, 85, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.pd-drug-card__img-wrap {
+  height: 160px;
+  overflow: hidden;
+}
+
+.pd-drug-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.pd-drug-card:hover .pd-drug-card__img { transform: scale(1.05); }
+
+.pd-drug-card__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pd-drug-card__name {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.pd-drug-card__desc {
+  font-size: 15px;
+  color: #8a9e96;
+  line-height: 1.5;
+}
+
+.pd-drug-card__cta {
+  font-size: 14px;
+  color: #EAC055;
+  margin-top: 4px;
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО ПРОТИВОПОКАЗАНИЙ ===== */
+.pd-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.pd-modal {
+  background: #1a2b22;
+  border: 1px solid rgba(234, 192, 85, 0.35);
+  border-radius: 24px;
+  padding: 36px;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  animation: slideInUp 0.3s ease-out;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.pd-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #7A8C84;
+  transition: all 0.2s;
+}
+.pd-modal__close:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+
+.pd-modal__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.pd-ai-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #a0884c, #8a6e35);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.pd-modal__title {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.pd-modal__subtitle {
+  font-size: 13px;
+  color: #7A8C84;
+  margin-top: 2px;
+}
+
+/* Загрузка */
+.pd-modal__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.pd-loading-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.pd-loading-dots span {
+  width: 10px;
+  height: 10px;
+  background: #EAC055;
+  border-radius: 50%;
+  animation: pdBounce 1.2s infinite ease-in-out;
+}
+.pd-loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.pd-loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pdBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+.pd-loading-text {
+  font-size: 15px;
+  color: #7A8C84;
+}
+
+/* Skeleton */
+.pd-skeleton {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.pd-skeleton__line {
+  height: 14px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+  background-size: 200% 100%;
+  border-radius: 6px;
+  animation: pdShimmer 1.5s infinite;
+}
+
+@keyframes pdShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Ошибка */
+.pd-modal__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  text-align: center;
+  color: #c0d0c8;
+}
+
+.pd-error-icon { font-size: 32px; color: #e8a040; }
+
+.pd-retry-btn {
+  padding: 8px 24px;
+  background: transparent;
+  border: 1px solid #EAC055;
+  border-radius: 20px;
+  color: #EAC055;
+  font-size: 15px;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.pd-retry-btn:hover { background: rgba(234, 192, 85, 0.1); }
+
+/* Пустое состояние */
+.pd-modal__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  text-align: center;
+  color: #c0d0c8;
+  font-size: 16px;
+}
+
+.pd-empty-icon { font-size: 36px; color: #7C9575; }
+
+/* Предупреждение */
+.pd-modal__warning-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232, 160, 64, 0.12);
+  border: 1px solid rgba(232, 160, 64, 0.3);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #e8c080;
+  margin-bottom: 20px;
+}
+
+.pd-warn-icon { font-size: 16px; }
+
+/* Список противопоказаний */
+.pd-contraindications-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pd-contraindication-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  color: #c0d0c8;
+  line-height: 1.5;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  border-left: 3px solid rgba(220, 80, 80, 0.5);
+}
+
+.pd-contra-bullet {
+  color: #e05050;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Страница не найдена */
+.pd-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #121D18;
+  color: #ffffff;
+  gap: 24px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .pd-hero, .pd-details {
+    grid-template-columns: 1fr;
+    padding: 20px 24px 40px;
+  }
+  .pd-breadcrumbs, .pd-back-btn { padding-left: 24px; }
+  .pd-drugs { padding: 0 24px 60px; }
+  .pd-hero__title { font-size: 36px; }
+}
+
+/* Текстовый формат ответа ИИ */
+.pd-contraindications-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pd-contraindication-paragraph {
+  font-size: 16px;
+  color: #c0d0c8;
+  line-height: 1.75;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  border-left: 3px solid rgba(220, 80, 80, 0.5);
+}
